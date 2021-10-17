@@ -10,10 +10,6 @@ on:
       - develop
 jobs:
   test:
-    name: PHP $({ matrix.php }} WP ${{ matrix.wp }}
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.wp == 'nightly' }}
     strategy:
       fail-fast: false
       matrix:
@@ -24,6 +20,10 @@ jobs:
             env:
               WP_VERSION: master
               WP_ALLOW_MULTISITE: 1
+    name: PHP $({ matrix.php }} WP ${{ matrix.wp }}
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.wp == 'nightly' }}
     services:
       database:
         image: mysql:5.6
