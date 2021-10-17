@@ -20,7 +20,7 @@ jobs:
             env:
               WP_VERSION: master
               WP_ALLOW_MULTISITE: 1
-    name: PHP $({ matrix.php }} WP ${{ matrix.wp }}
+    name: PHP ${{ matrix.php }} WP ${{ matrix.wp }}
     timeout-minutes: 15
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.wp == 'nightly' }}
