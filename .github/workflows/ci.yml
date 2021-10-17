@@ -17,14 +17,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [ '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0' ]
+        php: [ '7.1', '7.2', '7.3', '7.4', '8.0' ]
         wp: [ 'latest' ]
         include:
           - php: '7.4'
-            env:
-              WP_VERSION: master
-              WP_ALLOW_MULTISITE: 1
-          - php: '5.6'
             env:
               WP_VERSION: master
               WP_ALLOW_MULTISITE: 1
